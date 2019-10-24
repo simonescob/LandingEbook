@@ -1,0 +1,70 @@
+// variables
+
+$PrimaryColor: #40798c;
+$SecoundColor: #1f363c;
+
+a{
+	color: $PrimaryColor;
+}
+
+@mixin property-box{
+	width: 98.9vw;
+	height: 100vh;
+}
+
+@mixin flexbox-row {
+	display: flex;
+	flex-direction: row;
+}
+
+@mixin flexbox-col {
+	display: flex;
+	flex-direction: column;
+}
+
+header{
+	@include property-box;
+	background-image: url('https://i.imgur.com/o33eHLq.jpg');
+
+	nav.menu {
+		background-color: $PrimaryColor;
+		color: white;
+		padding: 20px 40px;
+
+		@include flexbox-row;
+		justify-content: space-between;
+		align-items: center;
+
+		li{
+			list-style-type: none;
+			a{
+				color: white;
+				text-decoration: none;	
+			}
+		}
+
+		.menu-side{
+			@include flexbox-row;
+			li{
+				a{
+					padding: 25px;
+				}
+				a:hover{
+					background-color: $SecoundColor;
+				}
+			}
+		}
+		
+	}
+
+}
+
+.content{
+	@include property-box;
+	// background-color: $ContentColor;
+}
+
+footer{
+	@include property-box;
+	background-image: url('https://i.imgur.com/Om5UaNg.jpg');
+}
