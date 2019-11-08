@@ -24,7 +24,9 @@ a{
 
 header{
 	@include property-box;
-	background-image: url('https://i.imgur.com/o33eHLq.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) url('https://i.imgur.com/o33eHLq.jpg');
+	background-size: cover;
+	background-blend-mode: saturation;
 
 	nav.menu {
 		background-color: $PrimaryColor;
@@ -57,11 +59,79 @@ header{
 		
 	}
 
+	.header-content{
+		height: 89%;
+		margin: 0 60px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.header-text{
+
+			// border: solid;
+
+			margin-top: 30px;
+			color: white;
+			font-size: 90px;
+			width: 50vw;
+			text-align: center;
+		}
+		
+		.header-form{
+			// border: solid;
+			width: 50vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			form{
+				padding: 30px;
+				background-color: white;
+				display: flex;
+				flex-direction: column;
+				// align-items: center;
+
+				width: 300px;
+				height: 350px;
+				border-radius: 22px;
+
+				p{
+					margin: 0 25px;
+					font-size: 22px;
+					margin-bottom: 40px;
+				}
+
+				input{
+					padding: 5px;
+					margin: 0 25px;
+					border: none;
+					font-size: 28px;
+					
+					outline: none;
+
+					margin-bottom: 40px;
+					border-bottom: 3px solid $SecoundColor;
+				}
+
+				input[type="submit"]{
+					padding: 10px;
+					border-radius: 10px;
+					border: none;
+					color: white;
+					background-color: $SecoundColor;
+				}
+
+			}
+		}
+
+	}
+
 }
+/* end header */
 
 .content{
 	@include property-box;
-	// background-color: $ContentColor;
 }
 
 footer{
