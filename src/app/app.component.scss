@@ -60,8 +60,28 @@ header{
 }
 
 .content{
-	@include property-box;
-	// background-color: $ContentColor;
+	font-family: 'Open Sans', sans-serif !important;
+	text-align: center;
+
+	@include flexbox-col;
+
+	div{
+		height: 110vh;
+
+		@include flexbox-col;
+		justify-content: center;
+		padding: 0 150px;
+	}
+
+	.pricing{
+		background-color: #1f353d;
+		color: white;
+	}
+
+	span.icon{
+		font-size: 150px;
+	}
+
 }
 
 footer{
