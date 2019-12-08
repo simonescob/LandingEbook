@@ -67,4 +67,95 @@ header{
 footer{
 	@include property-box;
 	background-image: url('https://i.imgur.com/Om5UaNg.jpg');
+	// border: solid;
+	width: 100%;
+	
+	.footer-all{
+		// border: solid;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	.footer-form{
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		form{
+			padding: 30px;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+			// align-items: center;
+
+			width: 740px;
+			height: 130px;
+			border-radius: 22px;
+
+			.form-text{
+				p{
+					margin: 0 25px;
+					font-size: 22px;
+					margin-bottom: 40px;
+				}
+			}
+
+			input{
+				padding: 5px;
+				margin: 0 18px;
+				border: none;
+				font-size: 20px;
+				
+				outline: none;
+
+				margin-bottom: 10px;
+				border-bottom: 3px solid $SecoundColor;
+			}
+
+			input[type="submit"]{
+				padding: 15px 50px;
+				border-radius: 10px;
+				border: none;
+				color: white;
+				background-color: $SecoundColor;
+				font-size: 17px;
+			}
+
+			input[type="submit"]:hover{
+				cursor: pointer;
+			}
+
+		}
+	}
+
+	.footer-bottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		width: 90%;
+		height: 200px;
+		color: white;
+		background-color: #40798c;
+		padding: 40px 67px;
+
+		p{
+			// border: solid;
+			text-align: center;
+			width: 300px;
+		}
+
+		p.text {
+			font-size: 50px;
+		}	
+
+	}
+
 }
