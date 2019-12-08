@@ -1,7 +1,12 @@
+@import "./app/app.component.scss";
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 *{
 	padding: 0;
 	margin: 0;
+}
+
+body, html{
 	font-family: 'Raleway';
 }
-@import "./app/app.component.scss";
-@import url('https://fonts.googleapis.com/css?family=Raleway:500,800&display=swap');
