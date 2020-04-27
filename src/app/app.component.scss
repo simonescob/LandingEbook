@@ -251,3 +251,18 @@ footer{
 	}
 
 }
+
+@media screen and (max-width: 720px){
+
+	header {
+		
+		.size-component {
+			width: 90%;
+		}
+
+		.header-content{
+			@extend .size-component;
+		}
+	}
+
+}

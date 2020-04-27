@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
+import { ThankspageComponent } from './thankspage/thankspage.component';
+import { RouterModule } from '@angular/router';
+import { LadingComponent } from './lading/lading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    ThankspageComponent,
+    LadingComponent
   ],
   imports: [
     BrowserModule,
