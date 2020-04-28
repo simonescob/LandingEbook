@@ -3,13 +3,17 @@
 $PrimaryColor: #40798c;
 $SecoundColor: #1f363c;
 
+// sizes
+
+$SizeTable: 768px;
+
 a{
 	color: $PrimaryColor;
 }
 
-@mixin property-box{
+@mixin box-values{
 	width: 98.9vw;
-	height: 100vh;
+	padding-bottom: 100px;	
 }
 
 @mixin flexbox-row {
@@ -23,12 +27,10 @@ a{
 }
 
 header{
-	@include property-box;
+	@include box-values;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/o33eHLq.jpg');
-	// background-size: cover;
-	// background-blend-mode: saturation;
 
-	nav.menu {
+	.menu {
 		background-color: $PrimaryColor;
 		color: white;
 		padding: 20px 40px;
@@ -55,12 +57,14 @@ header{
 					background-color: $SecoundColor;
 				}
 			}
+			span{
+				display: none;
+			}
 		}
 		
 	}
 
 	.header-content{
-		height: 89%;
 		margin: 0 60px;
 
 		display: flex;
@@ -68,9 +72,6 @@ header{
 		justify-content: center;
 
 		.header-text{
-
-			// border: solid;
-
 			margin-top: 30px;
 			color: white;
 			font-size: 90px;
@@ -79,7 +80,6 @@ header{
 		}
 		
 		.header-form{
-			// border: solid;
 			width: 50vw;
 			display: flex;
 			justify-content: center;
@@ -90,7 +90,6 @@ header{
 				background-color: white;
 				display: flex;
 				flex-direction: column;
-				// align-items: center;
 
 				width: 300px;
 				height: 350px;
@@ -156,7 +155,7 @@ header{
 }
 
 footer{
-	@include property-box;
+	@include box-values;
 	background-image: url('https://i.imgur.com/Om5UaNg.jpg');
 	// border: solid;
 	width: 100%;
@@ -252,17 +251,45 @@ footer{
 
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: $SizeTable){
 
-	header {
-		
+	header{
 		.size-component {
-			width: 90%;
+			flex-direction: column;
+		}
+	
+		.menu-side{
+			li{
+				display: none;
+			}
+			span{
+				display: flex !important;
+			}
 		}
 
 		.header-content{
 			@extend .size-component;
+	
+			.header-text, .header-form{
+				width: 80vw;
+			}
+	
+			.header-text{
+				font-size: 35px;
+			}
 		}
 	}
 
+	.content{
+
+		div{
+			height: auto;
+			padding: 20px 30px;
+			padding-bottom: 70px;
+		}
+
+	}
+
 }
+
+
