@@ -22,12 +22,15 @@
 		<div class="header-form">
 
 			
-			<form class="header-form--form" action="">
+			<form class="header-form--form" 
+			[formGroup]="dataForm"
+			(ngSubmit)="sendData()"
+			>
 				<p class="header-form--text">
 					Pon tus datos aquí para descargar el E-Book
 				</p>
-				<input type="text" placeholder="Nombre">
-				<input type="email" name="email" id="email" placeholder="Correo">
+				<input type="text" formControlName="name" placeholder="Nombre" required>
+				<input type="email" formControlName="email" name="email" placeholder="Correo" required>
 				<input type="submit" value="Descargar">
 			</form>
 
