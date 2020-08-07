@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ThankspageComponent } from './thankspage/thankspage.component';
 import { RouterModule } from '@angular/router';
 import { LadingComponent } from './lading/lading.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LadingComponent } from './lading/lading.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
