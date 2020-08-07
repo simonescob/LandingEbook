@@ -25,6 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'thanks', component: ThankspageComponent}
+    ]),
     ReactiveFormsModule
   ],
   providers: [],
