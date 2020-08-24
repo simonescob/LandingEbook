@@ -1,0 +1,85 @@
+@import "../sass/index.scss";
+
+a{
+  color: white;
+}
+
+header{
+	@include box-values;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/7p2gidx.png');
+  height: 100vh;
+
+	.menu {
+		background-color: $primary-color;
+		color: white;
+		padding: 20px 40px;
+
+		@include flexbox-row;
+		justify-content: space-between;
+		align-items: center;
+
+		li{
+			list-style-type: none;
+			a{
+				color: white;
+				text-decoration: none;	
+			}
+		}
+
+		.menu-side{
+			@include flexbox-row;
+			li{
+				a{
+					padding: 25px;
+				}
+				a:hover{
+					background-color: $secound-color;
+				}
+			}
+			span{
+				display: none;
+			}
+		}
+		
+	}
+
+	.header-content{
+    margin: 0 60px;
+    height: 70vh;
+
+		display: flex;
+		flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+		.header-text{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+			color: white;
+			font-size: 90px;
+      width: 80vw;
+
+      p{
+        margin-left: 68px;
+        font-size: 32px;
+      }
+		}
+		
+
+	}
+
+}
+
+@media screen and (max-width: $size-table){
+
+  .header-text{
+    margin-top: 120px !important;
+    font-size: 50px !important;
+    p{
+      text-align: left;
+      margin-left: 20px !important;
+    }
+  }
+
+}

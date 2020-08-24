@@ -1,35 +1,11 @@
-// variables
-
-$PrimaryColor: #40798c;
-$SecoundColor: #1f363c;
-
-a{
-	color: $PrimaryColor;
-}
-
-@mixin property-box{
-	width: 98.9vw;
-	height: 100vh;
-}
-
-@mixin flexbox-row {
-	display: flex;
-	flex-direction: row;
-}
-
-@mixin flexbox-col {
-	display: flex;
-	flex-direction: column;
-}
+@import "./sass/index.scss";
 
 header{
-	@include property-box;
+	@include box-values;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/o33eHLq.jpg');
-	// background-size: cover;
-	// background-blend-mode: saturation;
 
-	nav.menu {
-		background-color: $PrimaryColor;
+	.menu {
+		background-color: $primary-color;
 		color: white;
 		padding: 20px 40px;
 
@@ -52,15 +28,17 @@ header{
 					padding: 25px;
 				}
 				a:hover{
-					background-color: $SecoundColor;
+					background-color: $secound-color;
 				}
+			}
+			span{
+				display: none;
 			}
 		}
 		
 	}
 
 	.header-content{
-		height: 89%;
 		margin: 0 60px;
 
 		display: flex;
@@ -68,10 +46,7 @@ header{
 		justify-content: center;
 
 		.header-text{
-
-			// border: solid;
-
-			margin-top: 30px;
+			margin: 40px 0;
 			color: white;
 			font-size: 90px;
 			width: 50vw;
@@ -79,7 +54,6 @@ header{
 		}
 		
 		.header-form{
-			// border: solid;
 			width: 50vw;
 			display: flex;
 			justify-content: center;
@@ -90,7 +64,6 @@ header{
 				background-color: white;
 				display: flex;
 				flex-direction: column;
-				// align-items: center;
 
 				width: 300px;
 				height: 350px;
@@ -111,7 +84,7 @@ header{
 					outline: none;
 
 					margin-bottom: 40px;
-					border-bottom: 3px solid $SecoundColor;
+					border-bottom: 3px solid $secound-color;
 				}
 
 				input[type="submit"]{
@@ -119,7 +92,7 @@ header{
 					border-radius: 10px;
 					border: none;
 					color: white;
-					background-color: $SecoundColor;
+					background-color: $secound-color;
 				}
 
 			}
@@ -156,37 +129,35 @@ header{
 }
 
 footer{
-	@include property-box;
+	//  @include box-values;
 	background-image: url('https://i.imgur.com/Om5UaNg.jpg');
 	// border: solid;
-	width: 100%;
+	// height: 70vh !important;
+	padding-top: 100px;
+	display: flex;
+	flex-direction: column;
 	
 	.footer-all{
-		// border: solid;
 		height: 100%;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		padding: 30px 0;
 	}
 
-
 	.footer-form{
-		width: 50vw;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: nowrap;
 
 		form{
+			margin: 0 20px;
 			padding: 30px;
 			background-color: white;
-			display: flex;
-			flex-direction: column;
-			// align-items: center;
-
-			width: 740px;
-			height: 130px;
 			border-radius: 22px;
 
 			.form-text{
@@ -198,7 +169,7 @@ footer{
 			}
 
 			input{
-				width: 200px;
+				width: 175px;
 				padding: 5px;
 				margin: 0 18px;
 				border: none;
@@ -207,7 +178,7 @@ footer{
 				outline: none;
 
 				margin-bottom: 10px;
-				border-bottom: 3px solid $SecoundColor;
+				border-bottom: 3px solid $secound-color;
 			}
 
 			input[type="submit"]{
@@ -215,7 +186,7 @@ footer{
 				border-radius: 10px;
 				border: none;
 				color: white;
-				background-color: $SecoundColor;
+				background-color: $secound-color;
 				font-size: 17px;
 			}
 
@@ -231,9 +202,6 @@ footer{
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-
-		width: 90%;
-		height: 200px;
 		color: white;
 		background-color: #40798c;
 		padding: 40px 67px;
@@ -252,17 +220,71 @@ footer{
 
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: $size-table){
 
-	header {
-		
+	header{
 		.size-component {
-			width: 90%;
+			flex-direction: column;
+		}
+	
+		.menu-side{
+			li{
+				display: none;
+			}
+			span{
+				display: flex !important;
+			}
 		}
 
 		.header-content{
 			@extend .size-component;
+	
+			.header-text, .header-form{
+				width: 80vw;
+			}
+	
+			.header-text{
+				font-size: 35px;
+			}
+		}
+	}
+
+	.content{
+
+		div{
+			height: auto;
+			padding: 20px 30px;
+			padding-bottom: 70px;
+		}
+
+	}
+
+	.footer-all{
+		.footer-form{
+			flex-direction: row;
+
+			form{
+				display: flex;
+				flex-direction: column;
+				width: 300px;
+				height: 350px;
+				justify-content: center;
+				text-align: center;
+				align-items: center;
+			}
+
+			form input{
+				width: 235px;
+				padding: 5px;
+				margin: 0 15px;
+				border: none;
+				font-size: 28px;
+				margin-bottom: 40px;
+				border-bottom: 3px solid #1f363c;
+			}
 		}
 	}
 
 }
+
+
