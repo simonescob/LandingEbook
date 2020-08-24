@@ -1,37 +1,11 @@
-// variables
-
-$PrimaryColor: #40798c;
-$SecoundColor: #1f363c;
-
-// sizes
-
-$SizeTable: 768px;
-
-a{
-	color: $PrimaryColor;
-}
-
-@mixin box-values{
-	width: 98.9vw;
-	padding-bottom: 100px;	
-}
-
-@mixin flexbox-row {
-	display: flex;
-	flex-direction: row;
-}
-
-@mixin flexbox-col {
-	display: flex;
-	flex-direction: column;
-}
+@import "./sass/index.scss";
 
 header{
 	@include box-values;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/o33eHLq.jpg');
 
 	.menu {
-		background-color: $PrimaryColor;
+		background-color: $primary-color;
 		color: white;
 		padding: 20px 40px;
 
@@ -54,7 +28,7 @@ header{
 					padding: 25px;
 				}
 				a:hover{
-					background-color: $SecoundColor;
+					background-color: $secound-color;
 				}
 			}
 			span{
@@ -110,7 +84,7 @@ header{
 					outline: none;
 
 					margin-bottom: 40px;
-					border-bottom: 3px solid $SecoundColor;
+					border-bottom: 3px solid $secound-color;
 				}
 
 				input[type="submit"]{
@@ -118,7 +92,7 @@ header{
 					border-radius: 10px;
 					border: none;
 					color: white;
-					background-color: $SecoundColor;
+					background-color: $secound-color;
 				}
 
 			}
@@ -204,7 +178,7 @@ footer{
 				outline: none;
 
 				margin-bottom: 10px;
-				border-bottom: 3px solid $SecoundColor;
+				border-bottom: 3px solid $secound-color;
 			}
 
 			input[type="submit"]{
@@ -212,7 +186,7 @@ footer{
 				border-radius: 10px;
 				border: none;
 				color: white;
-				background-color: $SecoundColor;
+				background-color: $secound-color;
 				font-size: 17px;
 			}
 
@@ -246,7 +220,7 @@ footer{
 
 }
 
-@media screen and (max-width: $SizeTable){
+@media screen and (max-width: $size-table){
 
 	header{
 		.size-component {

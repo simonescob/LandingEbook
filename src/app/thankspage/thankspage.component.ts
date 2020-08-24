@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankspageComponent implements OnInit {
 
+  title = "LandingEbook"
+
   constructor() { }
 
   ngOnInit() {
