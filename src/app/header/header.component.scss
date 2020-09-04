@@ -1,0 +1,20 @@
+@import '../sass/index.scss';
+
+.menu-side-mobile{
+  display: block !important;
+}
+
+.menu{
+
+  span{
+    color: #19ddd3;
+  }
+}
+
+@media screen and (max-width: $size-table){
+
+  .menu-side-mobile{
+    display: block !important;
+  }
+
+}
