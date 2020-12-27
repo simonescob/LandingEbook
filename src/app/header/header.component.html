@@ -5,45 +5,38 @@
 
 		<div class="menu-side">
 			<li><a href="#">inicio</a></li>
-			<li><a href="#">¿Por qué comprarlo?</a></li>
-			<li><a href="#">Precio</a></li>
-			<li><a href="#">Acerca de</a></li>
+			<li><a href="#why">¿Por qué comprarlo?</a></li>
+			<li><a href="#price">Precio</a></li>
+			<li><a href="#about">Acerca de</a></li>
 
 			<span id="TriggerMenu"
 			(click)="openMenu()"
 			>menu1</span>
 
-			<div class="menu-mobile">
+			<!-- <div class="menu-mobile">
 				<li><a href="#">inicio</a></li>
 				<li><a href="#">¿Por qué comprarlo?</a></li>
 				<li><a href="#">Precio</a></li>
 				<li><a href="#">Acerca de</a></li>
-			</div>
+			</div> -->
 
 		</div>
 	</nav>
 
 	<div class="header-content">
-
 		<div class="header-text">
 			Este es uno de los mejores E-Books invicibles
 		</div>
-
 		<div class="header-form">
-
-			
-			<form class="header-form--form" 
-			[formGroup]="dataForm"
-			(ngSubmit)="sendData()"
-			>
+			<form class="header-form--form" [formGroup]="myForm" (submit)="sendEmail($event)">
 				<p class="header-form--text">
 					Pon tus datos aquí para descargar el E-Book
 				</p>
-				<input type="text" formControlName="name" placeholder="Nombre" required>
-				<input type="email" formControlName="email" name="email" placeholder="Correo" required>
-				<input type="submit" value="Descargar">
+				<input type="text" placeholder="Nombre" formControlName="name">
+				<input type="email" name="email" id="email" placeholder="Correo" 
+					formControlName="email">
+				<input type="submit"  value="Descargar">
 			</form>
-
 		</div>
 
 	</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -11,32 +10,23 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   title = 'LandingEbook';
+  myForm: FormGroup;
 
-  dataForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-  });
+  constructor(private fb: FormBuilder) {
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
-
-  ngOnInit() {}
-
-  onReset(){
-    this.dataForm.reset();
   }
 
-  sendData(){
-    let formValue = this.dataForm.value;
-    [formValue].map((e) => console.log(e.name +' '+ e.email))
-    this.onReset();
-    this.router.navigate(['/thanks'])
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      name: "",  
+      email: "",
+    })
   }
 
-  openMenu(){
-    alert("helloooooo")
+  sendEmail(e: Event){
+    e.preventDefault();
+    console.log(this.myForm.value)
   }
+
 
 }
