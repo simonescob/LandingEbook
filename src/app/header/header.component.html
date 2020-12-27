@@ -24,23 +24,19 @@
 	</nav>
 
 	<div class="header-content">
-
 		<div class="header-text">
 			Este es uno de los mejores E-Books invicibles
 		</div>
-
 		<div class="header-form">
-
-			
-			<form class="header-form--form" action="">
+			<form class="header-form--form" [formGroup]="myForm" (submit)="sendEmail($event)">
 				<p class="header-form--text">
 					Pon tus datos aquí para descargar el E-Book
 				</p>
-				<input type="text" placeholder="Nombre">
-				<input type="email" name="email" id="email" placeholder="Correo">
-				<input type="submit" value="Descargar">
+				<input type="text" placeholder="Nombre" formControlName="name">
+				<input type="email" name="email" id="email" placeholder="Correo" 
+					formControlName="email">
+				<input type="submit"  value="Descargar">
 			</form>
-
 		</div>
 
 	</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  myForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      name: "",  
+      email: "",
+    })
+
+    this.myForm.valueChanges.subscribe(console.log)
   }
 
 }

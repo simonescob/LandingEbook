@@ -2,16 +2,16 @@
 
 	<div class="footer-all">
 
-		<div class="footer-form">
-			<form action="">
+		<div class="footer-form" >
+			<form [formGroup]="myForm">
 				<div class="form-text">
 					<p >
 						Pon tus datos aquí para descargar el E-Book
 					</p>
 				</div>
 				
-				<input type="text" placeholder="Nombre">
-				<input type="email" name="email" id="email" placeholder="Correo">
+				<input type="text" placeholder="Nombre" name="name" formControName="name">
+				<input type="email" name="email" id="email" placeholder="Correo" formControName="email">
 				<input type="submit" value="Descargar">
 			</form>
 		</div>

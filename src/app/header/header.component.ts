@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   title = 'LandingEbook';
+  myForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      name: "",  
+      email: "",
+    })
   }
 
-  openMenu(){
-    alert("helloooooo")
+  sendEmail(e: Event){
+    e.preventDefault();
+    console.log(this.myForm.value)
   }
+
 
 }
