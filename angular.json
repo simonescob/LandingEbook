@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "LadingEbook"
+    }
+  },
+  "defaultProject": "LadingEbook",
+  "cli": {
+    "analytics": "b681414d-5476-475e-ac1c-c3214688540a"
+  }
 }
